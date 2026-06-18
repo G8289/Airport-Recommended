@@ -95,12 +95,20 @@
     .promo-header { text-align: center; margin-bottom: 20px; }
     .promo-title { font-size: 24px; font-weight: 900; color: #2f3542; margin-top: 10px; letter-spacing: 1px;}
     
+    /* 核心修改：重新加入副标题样式 */
+    .promo-subtitle {
+        font-size: 14px;
+        color: #ff4757;
+        font-weight: 700;
+        margin-top: 6px;
+    }
+    
     .tags-group {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
-        margin: 12px 0 15px 0;
+        margin: 15px 0 15px 0;
     }
     .anime-tag {
         background: rgba(255, 105, 180, 0.15);
@@ -129,8 +137,10 @@
         align-items: center;
     }
     .review-title::before { content: "💡"; margin-right: 5px; font-size: 16px; }
+    
+    /* 核心修改：将亲测框内的段落字体缩小为 13px */
     .personal-review-box p {
-        font-size: 14px;
+        font-size: 13px;
         color: #444;
         line-height: 1.7;
         margin: 0 0 8px 0;
@@ -232,9 +242,8 @@
     }
     .modal-item { margin-bottom: 16px; font-size: 15px; color: #2f3542; line-height: 1.8; }
     
-    /* 核心修改：独立的优惠码文本和复制按钮 */
     .code-text {
-        color: #ff6600; /* 亮橘色 */
+        color: #ff6600; 
         font-family: Consolas, Monaco, monospace;
         font-weight: 700;
         font-size: 15px;
@@ -242,7 +251,7 @@
     }
     .copy-btn {
         display: inline-block;
-        background: #ff6600; /* 亮橘色按钮 */
+        background: #ff6600; 
         color: white;
         padding: 2px 10px;
         border-radius: 6px;
@@ -282,9 +291,11 @@
         <img src="https://moeu01.com/images/icon-fa-gem.png" alt="萌物云" class="gem-icon-img">
         <div class="promo-title">萌物云：历经风暴，依然闪耀！</div>
         
+        <div class="promo-subtitle">🛡️ 完美防御了今年4月的次元风暴（GFW大规模封锁） 🛡️</div>
+        
         <div class="tags-group">
             <span class="anime-tag">ヽ(*・ω・)ﾉ 网速救星</span>
-            <span class="anime-tag">刷片神器</span>
+            <span class="anime-tag">虾片神器</span>
             <span class="anime-tag">追剧外挂</span>
             <span class="anime-tag">性价比极高 ٩(◕‿◕｡)۶</span>
         </div>
@@ -317,7 +328,7 @@
             </li>
             <li>
                 <span class="feature-icon">💰</span>
-                <div><b>丰俭由人：</b>月付低至 <b>9.8元</b> 起！更有极具性价比的<span class="anime-highlight">一次性流量包</span>和钻石不限时传家宝套餐！</div>
+                <div><b>丰俭由人：</b>月付低至 <b>9.8元</b> 起！更有极具性价比的<span class="anime-highlight">一次性流量包（钻石不限时传家宝）</span>套餐！</div>
             </li>
             <li>
                 <span class="feature-icon">📱</span>
@@ -338,21 +349,16 @@
         <h3 class="modal-title">🎉 2026 年 618 购物节 🎉</h3>
         
         <div class="modal-item">
-            <div style="margin-bottom: 10px;">活动 1 (限时优惠券)：</div>
+            <div style="margin-bottom: 10px;">活动  (限时优惠券)：</div>
             <div style="margin-bottom: 8px;">
-                🎁 618年付/两年付/三年付 7 折券： <span class="code-text">260618-30off</span><span class="copy-btn" onclick="copyCode(this, '260618-30off')">复制</span>
+                🎁 <b>618年付/两年付/三年付 7 折券</b>： <span class="code-text">260618-30off</span><span class="copy-btn" onclick="copyCode(this, '260618-30off')">复制</span>
             </div>
             <div style="margin-bottom: 8px;">
-                🎁 618全场 8 折券： <span class="code-text">260618-20off</span><span class="copy-btn" onclick="copyCode(this, '260618-20off')">复制</span>
+                🎁 <b>618全场 8 折券</b>： <span class="code-text">260618-20off</span><span class="copy-btn" onclick="copyCode(this, '260618-20off')">复制</span>
             </div>
             <div style="font-size: 13.5px; color: #57606f; margin-top: 12px;">
                 以上优惠码适用全部套餐的新购/续费。 <a href="https://dash.moeu01.com/#/register?code=NOwBzWCE" target="_blank" style="color: #1e90ff; text-decoration: none; font-weight: 700;">👉去购买</a>
             </div>
-        </div>
-
-        <div class="modal-item">
-            🔥 <b>活动 2 (邀请得丰厚回报)：</b><br>
-            活动期间我们已将 <b>好友邀请佣金比例提升到 <span style="color:#e84118;">45%</span></b>。他人通过您的邀请链接注册并购买后，您可以得到订单金额 45% 的佣金回报。
         </div>
         
         <div class="modal-footer">
@@ -411,7 +417,6 @@
         closeBtn.innerText = "我知道了"; 
     }
 
-    // 核心修改：只改变按钮自身的文字和颜色，不影响旁边的优惠码
     function copyCode(btnElement, textToCopy) {
         const tempInput = document.createElement("input");
         tempInput.value = textToCopy;
@@ -422,10 +427,10 @@
 
         const originalText = btnElement.innerText;
         btnElement.innerText = "成功!";
-        btnElement.style.background = "#2ed573"; // 变成绿色
+        btnElement.style.background = "#2ed573"; 
         setTimeout(() => {
             btnElement.innerText = originalText;
-            btnElement.style.background = "#ff6600"; // 恢复橘色
+            btnElement.style.background = "#ff6600"; 
         }, 1500);
     }
 </script>
